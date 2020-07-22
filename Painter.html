@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>简易绘图板设计</title>
+    <script src="js/jquery.min.js"></script>
+    <style type="text/css">
+        @import "css/main.css";
+      body{
+          background-image: url(img/part-00486-2545.jpg);
+      }
+    </style>
+    <script src="js/Draw.js"></script>
+    <script src="js/echarts.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="container" >
+    <div id="header" >简易绘画板设计
+        <img src="img/painter.jpg" style="float:left;width:10%;height:90px" >
+    <span style="font-family: Arial;font-size: 20px" ></span></div>
+
+    <div id="main">
+        <div id="painter">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th width="30%">
+
+
+
+                            <div style="float:left;margin-right: 5px" class="btn-group" data-toggle="buttons">
+
+                            <label  title="铅笔">
+                                铅笔<input type="radio" name="options" value='0'>
+                            </label>
+                            <label  title="圆">
+                                圆<input type="radio" name="options" value='1'>
+                            </label>
+                            <label  title="矩形">
+                                矩形<input type="radio" name="options" value='2'>
+                            </label>
+                            <label  title="线段">
+                                线段<input type="radio" name="options" value='3'>
+                            </label>
+                            <label  title="三角形">
+                                三角形<input type="radio" name="options" value='4'>
+                            </label>
+                            <label  title="三角形">
+                                圆弧<input type="radio" name="options" value='5'>
+                            </label>
+
+                            </div>
+
+                        <div style="float: right;">
+                            <form style="float: left;">
+                                线框宽度
+                                <select id="linewidth">
+                                    <option value="2">2px</option>
+                                    <option value="4">4px</option>
+                                    <option value="6">6px</option>
+                                    <option value="8">8px</option>
+                                </select>
+                            </form>
+                        </div>
+                    </th>
+                    <th width="30%">
+                        <div class="btn-group">
+                            <label >调色板:</label>
+                            <label >
+                                <canvas id="colorPicker"></canvas>
+                            </label>
+                        </div>
+                    </th>
+                    <th width="20%" style="text-align: right">
+                        <div class="btn-group">
+                            <button   type="button" id ="fill" style="float: left" >
+                            填充
+                            </button>
+                            <button   type="button" id ="reset">
+                                撤销
+                            </button>
+                            <button   type="button" id ="advance">
+                                恢复
+                            </button>
+                            <button   type="button" id ="save">
+                                保存
+                            </button>
+
+
+                        </div>
+                    </th>
+                </tr>
+                </thead>
+            </table>
+            <p class="text-center header-body">
+                <canvas id="myCanvas" style="border:1px solid #c3c3c3;">
+
+                </canvas>
+            </p>
+        </div>
+        <div id="vis">
+            <div id="guide" style="line-height: 24px;clear: both">
+                <h2 style="text-align: center">功能介绍</h2>
+                <ul><h3>欢迎使用本绘画板程序！ </h3>
+
+                </ul>
+                <li>您可以在画布的工具栏选择你喜爱的画框，选择线宽长度，进行颜色的选取和填充。</li>
+                <li>请注意，线段的填充还暂时未实现。（非闭合路径）</li>
+                <li>同时，您还可以进行撤销回滚、恢复和保存图像到本地的操作。填充后可能需要多步撤销。存储后，可以在本地储存查看base64的图像数据。</li>
+                <li>最后，您可以在右下角处查看您的画图框构成。</li>
+                <h3>祝您使用愉快！</h3>
+            </div>
+
+            <hr>
+            <div>
+                <button   style="font-family: 'Microsoft JhengHei UI Light';width: auto;height: auto;border-radius: initial" type="button" id="dis">
+                    已经画好了？来看看绘图构成!
+                </button>
+                <div id="display"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="footer">
+        <p style="font-size: 20px;font-family: 'Microsoft JhengHei UI Light'">参考资料</p>
+            <hr>
+        <a href="https://www.runoob.com/w3cnote/html5-canvas-intro.html" target="_blank">菜鸟教程--学习 HTML5 Canvas 这一篇文章就够了</a>
+        <a href="https://www.cnblogs.com/376346295-blog/p/10152727.html" target="_blank">H5制作简易画板-博客园</a>
+        <a href="https://www.w3school.com.cn/index.html" target="_blank">W3school在线教程Canvas部分</a>
+    </div>
+
+</div>
+</body>
+
+</html>
